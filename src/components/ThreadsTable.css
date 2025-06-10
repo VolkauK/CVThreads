@@ -1,0 +1,28 @@
+.sort-indicator {
+    margin-left: 0.5rem;
+    color: #1F2937;
+}
+
+.threads-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.threads-table th, td {
+    border: 1px solid #aaa;
+    padding: 8px;
+    text-align: left;
+}
+
+.threads-table th {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.group-header-cell {
+    padding: 0.5rem 1rem;
+    background-color: #F3F4F6;
+    font-weight: 700;
+    color: #374151;
+}
