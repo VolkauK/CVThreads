@@ -6,6 +6,10 @@
     margin-bottom: 10px;
 }
 
+.filter-label {
+    margin-right: 5px;
+}
+
 .load-data-button {
     padding: 0.625rem 1.5rem;
     color: #FFFFFF;

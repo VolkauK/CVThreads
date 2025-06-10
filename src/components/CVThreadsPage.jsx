@@ -49,6 +49,7 @@ const CVThreadsPage = () => {
     };
 
     const processedData = useMemo(() => {
+        console.log("memo")
         let filtered = sourceData;
         if (filters.searchTerm) {
             const regex = new RegExp(filters.searchTerm, 'i');
