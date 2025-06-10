@@ -6,18 +6,33 @@ import ThreadsTable from '../components/ThreadsTable';
 
 import "./CVThreadsPage.css"
 
+function formatDateForInput(dateObject) {
+    const year = dateObject.getFullYear();
+    const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+    const day = String(dateObject.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
+
+const today = new Date();
+const oneMonthAgo = new Date();
+oneMonthAgo.setMonth(today.getMonth() - 1);
+
+const initialEndDate = formatDateForInput(today);
+const initialStartDate = formatDateForInput(oneMonthAgo);
+
 const CVThreadsPage = () => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
     const [filters, setFilters] = useState({
-        startDate: '',
-        endDate: '',
+        startDate: initialStartDate,
+        endDate: initialEndDate,
         searchTerm: '',
         groupBy: 'none',
     });
     const [sourceData, setSourceData] = useState([]);
-    const [sortConfig, setSortConfig] = useState({ key: 'creation_date', direction: 'ASC' });
+    const [sortConfig, setSortConfig] = useState({ key: 'creation_date', direction: 'DESC' });
 
     const handleFilterChange = (name, value) => {
         setFilters(prev => ({ ...prev, [name]: value }));
